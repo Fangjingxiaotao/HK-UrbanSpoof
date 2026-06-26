@@ -33,7 +33,22 @@ The main equipment includes:
 | NovAtel SPAN-CPT | Provides GNSS/INS reference solution for selected scenarios |
 | GNSS antenna and Ublox F9P | Used for authentic signal collection and victim receiver testing |
 
-![Spoofing testbed and test flow](docs/figures/spoofing_testbed.png)
+<p align="center">
+  <img src="figures/spoofing_testbed.jpg" alt="Spoofing testbed and test flow" width="750">
+</p>
+
+<p align="center">
+  <em>Figure 1. Laboratory spoofing transmission testbed: (a) overall experimental flow and (b) implementation inside the shielded anechoic chamber.</em>
+</p>
+
+<p align="center">
+  <img src="figures/GNSS_recording.jpg" alt="Recordings" width="750">
+</p>
+
+<p align="center">
+  <em>Figure 2. Authentic GNSS signal recording platforms for urban data collection: (a) static and pedestrian scenarios and (b) vehicle scenarios.</em>
+</p>
+
 
 | Scenario | Description | Released data |
 |---|---|---|
@@ -42,7 +57,14 @@ The main equipment includes:
 | Scenario 3 | High-dynamic receiver; urban environment | Clean IF data, spoofed IF data, receiver ground truth, and ray-tracing-based labels |
 | Scenario 4 | Static receiver; simulated open-sky environment | Clean IF data and spoofed IF data |
 
-![Recording environments, receiver trajectories, and sky plots](docs/figures/four_scenarios.png)
+<p align="center">
+  <img src="figures/four_scenarios.jpg" alt="Scenarios" width="750">
+</p>
+
+<p align="center">
+  <em>Figure 3. The test environment, victim receiver trajectory, and sky plot for (a) scenario 1, (b) scenario 2, (c) scenario 3, and (d) scenario 4. Green satellites indicate line-of-sight (LOS) reception, while orange satellites indicate multipath-affected signals identified by ray-tracing analysis.</em>
+</p>
+
 
 ---
 
