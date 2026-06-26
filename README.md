@@ -34,7 +34,7 @@ The main equipment includes:
 | GNSS antenna and Ublox F9P | Used for authentic signal collection and victim receiver testing |
 
 <p align="center">
-  <img src="figures/spoofing_testbed.jpg" alt="Spoofing testbed and test flow" width="750">
+  <img src="figures/spoofing_testbed.jpg" alt="Spoofing testbed and test flow" width=600">
 </p>
 
 <p align="center">
@@ -42,7 +42,7 @@ The main equipment includes:
 </p>
 
 <p align="center">
-  <img src="figures/GNSS_recording.jpg" alt="Recordings" width="750">
+  <img src="figures/GNSS_recording.jpg" alt="Recordings" width="600">
 </p>
 
 <p align="center">
