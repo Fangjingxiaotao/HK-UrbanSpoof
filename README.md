@@ -77,7 +77,7 @@ The main equipment includes:
 ---
 ## Clean IF Recordings
 
-| File ID | Suggested file name | Scenario | File length (s) | Approx. raw IF size |
+| File ID | File name | Scenario | File length (s) | Approx. raw IF size |
 |---|---|---|---:|---:|
 | S1_Clean | `S1_Clean.bin` | 1: Static; open sky | 90 | 10.44 GB |
 | S2_Clean | `S2_Clean.bin` | 2: Low dynamic; sub-urban | 87 | 10.03 GB |
@@ -87,7 +87,7 @@ The main equipment includes:
 ---
 ## Spoofing Test Configuration
 
-| File ID | Suggested file name | Scenario | Injection time (s) | Pull-off start time (s) | File length (s) | Spoofing power advantage (dB) | Target spoofing distance (m) | Approx. raw IF size |
+| File ID | File name | Scenario | Injection time (s) | Pull-off start time (s) | File length (s) | Spoofing power advantage (dB) | Target spoofing distance (m) | Approx. raw IF size |
 |---|---|---|---:|---:|---:|---:|---:|---:|
 | S1_T1 | `S1_T1.bin` | 1: Static; open sky | 41 | 60 | 90 | 4 | 750 | 10.17 GB |
 | S1_T2 | `S1_T2.bin` | 1: Static; open sky | 41 | 60 | 90 | 11 | 750 | 10.17 GB |
