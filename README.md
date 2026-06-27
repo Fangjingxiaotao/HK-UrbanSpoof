@@ -111,6 +111,7 @@ The main equipment includes:
 ## Citation
 📖For detailed information about the dataset, please refer to our paper：[2026 ION GNSS+](https://www.ion.org/gnss/abstracts.cfm?paperID=16974)
 
+Currently, the IF data are publicly available, while the receiver ground truth and ray-tracing-based labels will be released upon publication of the paper.
 If you use this dataset in your research, please cite:
 
 ```bibtex
