@@ -120,6 +120,6 @@ TBC
 
 ---
 
-## 17. Acknowledgement
+## Acknowledgement
 
 The authors would like to thank Huang Feng, Liu Xikun, Tan Qijun, Zhou Zihong, and Li Zhengdao from the [Intelligent Positioning and Navigation Laboratory](http://qmohsu.github.io/en/) for their valuable assistance with data collection.
