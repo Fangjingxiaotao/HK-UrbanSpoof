@@ -108,7 +108,7 @@ The main equipment includes:
 | S3_Clean | `S3_Clean.bin` | 3: High dynamic; urban | 95 s | 11.10 GB |
 | S4_Clean | `S4_Clean.bin` | 4: Static; open sky simulated | 118 s | 13.69 GB |
 
----
+
 ## Spoofing Test Configuration
 
 
@@ -146,6 +146,18 @@ The main equipment includes:
 | S4_T1 | `S4_T1.bin` | 4: Static; open sky simulated | 41 | 60 | 118 | 3 | 400 | 13.20 GB |
 
 </details>
+
+---
+## Representative Behaviors
+### Receiver positioning
+<p align="center">
+  <img src="figures/Spoofed_positioning_github.jpg" alt="Scenarios" width="750">
+</p>
+
+<p align="center">
+  <em>Figure 4. Representative receiver positioning results under spoofing attacks.</em>
+</p>
+
 
 ---
 ## Citation
