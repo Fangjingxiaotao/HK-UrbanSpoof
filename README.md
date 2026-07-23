@@ -1,29 +1,69 @@
 # HK-UrbanSpoof
-This repository provides a GNSS spoofing dataset collected from realistic urban scenarios and laboratory-based warm-start synchronous spoofing attacks. The dataset is intended for research on GNSS spoofing detection, mitigation, receiver-level signal processing, and robust navigation under spoofing and urban propagation effects.
+HK-UrbanSpoof is an open GNSS dataset designed to test whether anti-spoofing
+methods remain reliable when spoofing coexists with **real urban multipath,
+non-line-of-sight (NLOS) reception, signal blockage, receiver motion, and
+tracking instability**. The dataset combines raw GPS L1 intermediate-frequency (IF) recordings with
+controlled warm-start synchronous spoofing tests. For the dynamic real-world
+scenarios, it also provides GNSS/INS reference trajectories and time-domain
+ray-tracing labels for interpreting environmental signal degradation.
+
 
 📥 IF data files download link: [Google Drive](https://drive.google.com/drive/folders/1HrKQQEHF89pBKIxq0W7MRZZk1vgLdsj8?usp=sharing)  
 📩 For questions, contact: [jingxiaotao2.fang@connect.polyu.hk](mailto:jingxiaotao2.fang@connect.polyu.hk)  
 
 ---
 
-## Overview
 
-The dataset is designed around **synchronous spoofing attacks**. Before spoofing injection, the victim receiver is already locked onto authentic GNSS signals and outputs stable navigation solutions for at least 36 s. The spoofing signal is then injected with negligible power and gradually increased until it overshadows the authentic signal. After the initial alignment stage, the spoofer enters the takeover / pull-off stage, where the spoofing code phase and Doppler frequency are smoothly shifted according to a predefined false trajectory. The victim receiver is therefore gradually pulled away from the authentic signal and finally converges to a false navigation solution.
 
-The dataset contains:
+## Why HK-UrbanSpoof?
+Many anti-spoofing methods are evaluated using clean laboratory recordings or simulated attacks. In real cities, however, multipath and NLOS reception can produce the same receiver-level symptoms often attributed to spoofing, including correlation-function distortion, Doppler oscillation, C/N₀ fluctuation, biased pseudoranges, and unstable tracking outputs.
 
-- 4 clean authentic GNSS IF recordings
-- 17 spoofed IF recordings generated from the clean scenarios
-- GNSS/INS reference trajectories as user ground truth
-- Ray-tracing-based labels for urban scenarios
+HK-UrbanSpoof is designed around three practical evaluation gaps:
 
-Currently, the released raw IF data are based on **GPS L1 only**. Multi-constellation and multi-frequency extensions, such as Galileo and BeiDou datasets, will be gradually added in future releases.
+- **Spoofing and urban propagation coexist.** Authentic signals were recorded in open-sky, coastal suburban, and dense urban environments before controlled spoofing replay in a shielded laboratory.
+- **Small attacks can hide inside the urban error floor.** The dataset includes target position offsets as small as 30 m, in addition to 90–750 m attacks.
+- **Receiver-level analysis needs interpretable references.** Raw IF data, clean baselines, attack timing, GNSS/INS trajectories, and per-satellitepropagation labels support evaluation from signal tracking to navigation.
+
+## Dataset at a Glance
+
+|Item|Coverage|
+|-|-|
+|Signal|GPS L1 C/A|
+|Public signal data|Raw 8-bit I/Q IF recordings|
+|Recordings|4 clean baselines + 17 spoofed tests|
+|Environments|Open sky, coastal suburban, dense urban, fully simulated|
+|Receiver motion|Static, pedestrian (approximately 0–2 m/s), vehicle|
+|Attack model|Warm-start synchronous, code-carrier-consistent, positioning-based attack|
+|Attack sequence|Pre-lock → low-power injection → power ramp → smooth pull-off|
+|Power advantage|Approximately 1.5–11 dB|
+|Target displacement|Approximately 30–750 m|
+|Propagation labels|Per-satellite LOS, multipath, NLOS, and blocked/unavailable states at 1 s intervals|
+
+### Four clean baseline scenarios
+<p align="center">
+  <img src="figures/four_scenarios.jpg" alt="Scenarios" width="750">
+</p>
+
+<p align="center">
+  <em>Figure 1. The test environment, victim receiver trajectory, and sky plot for scenarios 1, 2, 3, and 4. Green satellites indicate line-of-sight (LOS) reception, while orange satellites indicate multipath-affected signals identified by ray-tracing analysis.</em>
+</p>
+
+|ID|Environment|Motion|Main purpose|Spoofed tests|
+|-|-|-|-|-:|
+|**S1**|Real open sky|Static|Stable tracking reference|2|
+|**S2**|Real coastal suburban|Pedestrian|Interpretable low-dynamic multipath; includes 30–600 m attacks|11|
+|**S3**|Real dense urban canyon|Vehicle|Dynamic blockage, multipath, NLOS, and tracking instability|3|
+|**S4**|Fully simulated open sky|Static|Ideal synchronization and environment-free reference|1|
+
+S1–S3 preserve the propagation effects present during outdoor recording. S4
+uses simulated authentic and spoofing signals to provide a controlled reference
+without environmental interference.
+
 
 ---
+## Attack Design
+Each test begins with at least 36 s of authentic-signal tracking. The spoofing signal is then injected at negligible power and gradually amplified. During pull-off, its code phase and Doppler evolve smoothly according to a predefined false trajectory.
 
-## Experiment Setup
-
-The dataset is built from authentic GNSS recordings and laboratory-generated spoofing tests.
 
 The main equipment includes:
 | Equipment | Role |
@@ -38,7 +78,7 @@ The main equipment includes:
 </p>
 
 <p align="center">
-  <em>Figure 1. Laboratory spoofing transmission testbed: (a) overall experimental flow and (b) implementation inside the shielded anechoic chamber.</em>
+  <em>Figure 2. Laboratory spoofing transmission testbed: (a) overall experimental flow and (b) implementation inside the shielded anechoic chamber.</em>
 </p>
 
 <p align="center">
@@ -46,24 +86,9 @@ The main equipment includes:
 </p>
 
 <p align="center">
-  <em>Figure 2. Authentic GNSS signal recording platforms for urban data collection: (a) static and pedestrian scenarios and (b) vehicle scenarios.</em>
+  <em>Figure 3. Authentic GNSS signal recording platforms for urban data collection: (a) static and pedestrian scenarios and (b) vehicle scenarios.</em>
 </p>
 
-
-| Scenario | Description | Released data |
-|---|---|---|
-| Scenario 1 | Static receiver; open-sky environment | Clean IF data and spoofed IF data |
-| Scenario 2 | Low-dynamic receiver; sub-urban environment | Clean IF data, spoofed IF data, receiver ground truth, and ray-tracing-based labels |
-| Scenario 3 | High-dynamic receiver; urban environment | Clean IF data, spoofed IF data, receiver ground truth, and ray-tracing-based labels |
-| Scenario 4 | Static receiver; simulated open-sky environment | Clean IF data and spoofed IF data |
-
-<p align="center">
-  <img src="figures/four_scenarios.jpg" alt="Scenarios" width="750">
-</p>
-
-<p align="center">
-  <em>Figure 3. The test environment, victim receiver trajectory, and sky plot for (a) scenario 1, (b) scenario 2, (c) scenario 3, and (d) scenario 4. Green satellites indicate line-of-sight (LOS) reception, while orange satellites indicate multipath-affected signals identified by ray-tracing analysis.</em>
-</p>
 
 
 ---
@@ -74,20 +99,33 @@ The main equipment includes:
 |---:|---:|---:|---:|---:|
 | 1580 MHz | -4.58 MHz | 58 MHz | 8 bit I/Q | 56 MHz |
 
----
 ## Clean IF Recordings
 
-| File ID | File name | Scenario | File length (s) | Approx. raw IF size |
+| File ID | File name | Scenario | File length | Approx. raw IF size |
 |---|---|---|---:|---:|
-| S1_Clean | `S1_Clean.bin` | 1: Static; open sky | 90 | 10.44 GB |
-| S2_Clean | `S2_Clean.bin` | 2: Low dynamic; sub-urban | 87 | 10.03 GB |
-| S3_Clean | `S3_Clean.bin` | 3: High dynamic; urban | 95 | 11.10 GB |
-| S4_Clean | `S4_Clean.bin` | 4: Static; open sky simulated | 118 | 13.69 GB |
+| S1_Clean | `S1_Clean.bin` | 1: Static; open sky | 90 s | 10.44 GB |
+| S2_Clean | `S2_Clean.bin` | 2: Low dynamic; sub-urban | 87 s | 10.03 GB |
+| S3_Clean | `S3_Clean.bin` | 3: High dynamic; urban | 95 s | 11.10 GB |
+| S4_Clean | `S4_Clean.bin` | 4: Static; open sky simulated | 118 s | 13.69 GB |
 
 ---
 ## Spoofing Test Configuration
 
-| File ID | File name | Scenario | Injection time (s) | Pull-off start time (s) | File length (s) | Spoofing power advantage (dB) | Target spoofing distance (m) | Approx. raw IF size |
+
+|Scenario|File IDs|Injection|Pull-off|Power advantage|Target spoofing distance|File length|
+|-|-|-:|-:|-:|-:|-:|
+|S1|S1\_T1–S1\_T2|41 s|60 s|4, 11 dB|750 m|90 s|
+|S2|S2\_T1–S2\_T3|38 s|50 s|3, 6, 7 dB|600 m|87 s|
+|S2|S2\_T4–S2\_T6|38 s|50 s|1.5, 4, 6 dB|300 m|87 s|
+|S2|S2\_T7–S2\_T9|38 s|50 s|3.5, 7, 11 dB|90 m|87 s|
+|S2|S2\_T10–S2\_T11|38 s|50 s|6, 10 dB|30 m|87 s|
+|S3|S3\_T1–S3\_T3|38 s|50 s|3.5, 5, 6 dB|600 m|95 s|
+|S4|S4\_T1|41 s|60 s|3 dB|400 m|118 s|
+
+<details>
+<summary><strong>Show all 17 spoofing tests</strong></summary>
+
+| File ID | File name | Scenario | Injection time (s) | Pull-off start time (s) | File length (s) | Power advantage (dB) | Target spoofing distance (m) | Approx. raw IF size |
 |---|---|---|---:|---:|---:|---:|---:|---:|
 | S1_T1 | `S1_T1.bin` | 1: Static; open sky | 41 | 60 | 90 | 4 | 750 | 10.17 GB |
 | S1_T2 | `S1_T2.bin` | 1: Static; open sky | 41 | 60 | 90 | 11 | 750 | 10.17 GB |
@@ -106,6 +144,8 @@ The main equipment includes:
 | S3_T2 | `S3_T2.bin` | 3: High dynamic; urban | 38 | 50 | 95 | 5 | 600 | 11.00 GB |
 | S3_T3 | `S3_T3.bin` | 3: High dynamic; urban | 38 | 50 | 95 | 6 | 600 | 11.11 GB |
 | S4_T1 | `S4_T1.bin` | 4: Static; open sky simulated | 41 | 60 | 118 | 3 | 400 | 13.20 GB |
+
+</details>
 
 ---
 ## Citation
