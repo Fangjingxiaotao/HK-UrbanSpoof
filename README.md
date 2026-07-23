@@ -147,16 +147,28 @@ The main equipment includes:
 
 </details>
 
----
-## Representative Behaviors
 ### Receiver positioning
 <p align="center">
-  <img src="figures/Spoofed_positioning_github.jpg" alt="Scenarios" width="750">
+  <img src="figures/spoofed_receiver_pos.jpg" alt="Scenarios" width="750">
 </p>
 
 <p align="center">
   <em>Figure 4. Representative receiver positioning results under spoofing attacks.</em>
 </p>
+
+### Ray-tracing propagation labels
+
+For every visible satellite and 1 s epoch in S2 and S3:
+
+|Label|Meaning|
+|-|-|
+|`LOS`|Direct path only|
+|`MP`|Direct path plus one or more reflected paths|
+|`NLOS`|Direct path blocked; reflected path available|
+|`NaN` / blocked|No feasible direct or reflected path identified|
+
+The labels are derived from the receiver reference trajectory, satellite ephemerides, and 3D building models. They are geometric annotations and may not
+capture vegetation, moving objects, irregular surfaces, or all dynamic occlusions.
 
 
 ---
