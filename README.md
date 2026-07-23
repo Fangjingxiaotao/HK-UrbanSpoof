@@ -7,6 +7,9 @@ controlled warm-start synchronous spoofing tests. For the dynamic real-world
 scenarios, it also provides GNSS/INS reference trajectories and time-domain
 ray-tracing labels for interpreting environmental signal degradation.
 
+<p align="center">
+  <img src="figures/abstract.jpg" alt="Scenarios" width="750">
+</p>
 
 
 
