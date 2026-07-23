@@ -8,8 +8,9 @@ scenarios, it also provides GNSS/INS reference trajectories and time-domain
 ray-tracing labels for interpreting environmental signal degradation.
 
 
-📥 IF data files download link: [Google Drive](https://drive.google.com/drive/folders/1HrKQQEHF89pBKIxq0W7MRZZk1vgLdsj8?usp=sharing)  
-📩 For questions, contact: [jingxiaotao2.fang@connect.polyu.hk](mailto:jingxiaotao2.fang@connect.polyu.hk)  
+
+
+
 
 ---
 
@@ -168,8 +169,22 @@ For every visible satellite and 1 s epoch in S2 and S3:
 |`NaN` / blocked|No feasible direct or reflected path identified|
 
 The labels are derived from the receiver reference trajectory, satellite ephemerides, and 3D building models. They are geometric annotations and may not
-capture vegetation, moving objects, irregular surfaces, or all dynamic occlusions.
+capture vegetation, moving objects, irregular surfaces, or all dynamic occlusions. The labels were consistent across all tests for scenarios 2 and 3.
+<p align="center">
+  <img src="figures/S2_3_raytracing.jpg" alt="Scenarios" width="950">
+</p>
 
+<p align="center">
+  <em>Figure 5. Ray-tracing-based per-satellite propagation-state labels for (a) scenario 2 and (b) scenario 3.</em>
+</p>
+
+---
+## Download
+📥 IF data files download link: [Google Drive](https://drive.google.com/drive/folders/1HrKQQEHF89pBKIxq0W7MRZZk1vgLdsj8?usp=sharing)  
+
+📥 GNSS/INS ground truth: Coming soon
+
+📥 Ray-tracing labels: Coming soon
 
 ---
 ## Citation
@@ -181,6 +196,11 @@ If you use this dataset in your research, please cite:
 ```bibtex
 TBC
 ```
+
+📩 For questions or data issues, please:
+
+* open a [GitHub issue](https://github.com/Fangjingxiaotao/HK-UrbanSpoof/issues);
+* contact: [jingxiaotao2.fang@connect.polyu.hk](mailto:jingxiaotao2.fang@connect.polyu.hk)  .
 
 ---
 
