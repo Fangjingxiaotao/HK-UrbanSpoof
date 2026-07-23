@@ -171,7 +171,7 @@ For every visible satellite and 1 s epoch in S2 and S3:
 The labels are derived from the receiver reference trajectory, satellite ephemerides, and 3D building models. They are geometric annotations and may not
 capture vegetation, moving objects, irregular surfaces, or all dynamic occlusions. The labels were consistent across all tests for scenarios 2 and 3.
 <p align="center">
-  <img src="figures/S2_3_raytracing.jpg" alt="Scenarios" width="950">
+  <img src="figures/S2_3_raytracing_.jpg" alt="Scenarios" width="950">
 </p>
 
 <p align="center">
