@@ -185,7 +185,17 @@ capture vegetation, moving objects, irregular surfaces, or all dynamic occlusion
 ## Download
 📥 IF data files download link: [Google Drive](https://drive.google.com/drive/folders/1HrKQQEHF89pBKIxq0W7MRZZk1vgLdsj8?usp=sharing)  
 
-📥 GNSS/INS ground truth: Coming soon
+📥 GNSS/INS ground truth:
+## Ground Truth
+
+| Scenario | Receiver motion | Ground truth |
+|---|---|---|
+| **S1** | Static | 22.3284436007345,114.171361170177,8 |
+| **S2** | Pedestrian | [S2_GT.txt](S2_GT.txt) |
+| **S3** | Vehicle | [S3_GT.txt](S3_GT.txt) |
+| **S4** | Static | 22.304596639,114.180121139,61.384 |
+
+The S2 and S3 files contain time-tagged, post-processed GNSS/INS navigation solutions, including position, velocity, and attitude. For the static scenarios, the fixed receiver coordinates serve as the position reference.
 
 📥 Ray-tracing labels: Coming soon
 
