@@ -186,8 +186,6 @@ capture vegetation, moving objects, irregular surfaces, or all dynamic occlusion
 📥 IF data files download link: [Google Drive](https://drive.google.com/drive/folders/1HrKQQEHF89pBKIxq0W7MRZZk1vgLdsj8?usp=sharing)  
 
 📥 GNSS/INS ground truth:
-## Ground Truth
-
 | Scenario | Receiver motion | Ground truth |
 |---|---|---|
 | **S1** | Static | 22.3284436007345,114.171361170177,8 |
