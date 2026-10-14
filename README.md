@@ -199,7 +199,7 @@ The S2 and S3 files contain time-tagged, post-processed GNSS/INS navigation solu
 
 ---
 ## Citation
-📖For detailed information about the dataset, please refer to our paper：[2026 ION GNSS+](https://www.ion.org/gnss/abstracts.cfm?paperID=16974)
+📖For detailed information about the dataset, please refer to our paper: [2026 ION GNSS+](figures/ION_Conference_Paper_Jingxiaotao%20Fang.pdf).
 
 Currently, the IF data are publicly available, while the receiver ground truth and ray-tracing-based labels will be released upon publication of the paper.
 If you use this dataset in your research, please cite:
