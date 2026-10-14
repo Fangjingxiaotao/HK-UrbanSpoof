@@ -205,7 +205,16 @@ Currently, the IF data are publicly available, while the receiver ground truth a
 If you use this dataset in your research, please cite:
 
 ```bibtex
-TBC
+@inproceedings{fang2026urbanSpoof,
+  author    = {Fang, Jingxiaotao and Xu, Bing},
+  title     = {Toward Realistic Evaluation of {GNSS} Anti-Spoofing: A Spoofing Dataset from Urban Experiments},
+  booktitle = {Proceedings of the 39th International Technical Meeting of the Satellite Division of the Institute of Navigation (ION GNSS+ 2026)},
+  year      = {2026},
+  address   = {Orlando, Florida},
+  pages     = {3186--3200},
+  doi       = {10.33012/2026.20861},
+  url       = {https://doi.org/10.33012/2026.20861}
+}
 ```
 
 📩 For questions or data issues, please:
