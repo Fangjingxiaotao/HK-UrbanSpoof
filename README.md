@@ -112,7 +112,7 @@ All IF recordings use the default configuration below, **except `S4_Clean.bin`**
 
 | File ID | File name | Scenario | File length | Approx. raw IF size |
 |---|---|---|---:|---:|
-| S1_Clean | `S1_Clean.bin` | 1: Static; open sky | 90 s | 10.44 GB |
+| S1_Clean | `S1_Clean.bin` | 1: Static; open sky | 90 s | 21.54 GB |
 | S2_Clean | `S2_Clean.bin` | 2: Low dynamic; sub-urban | 87 s | 10.03 GB |
 | S3_Clean | `S3_Clean.bin` | 3: High dynamic; urban | 95 s | 11.10 GB |
 | S4_Clean | `S4_Clean.bin` | 4: Static; open sky simulated | 118 s | 1.12 GB |
