@@ -99,9 +99,14 @@ The main equipment includes:
 
 ## IF Data Configuration
 
-| Center frequency | Intermediate frequency | Sampling rate | Data type | Bandwidth |
-|---:|---:|---:|---:|---:|
-| 1580 MHz | -4.58 MHz | 58 MHz | 8 bit I/Q | 56 MHz |
+All IF recordings use the default configuration below, **except `S4_Clean.bin`**, which uses a separate configuration.
+
+| Files | Center frequency | Intermediate frequency | Sampling rate | Data type | Bandwidth |
+| --- | --- | --- | --- | --- | --- |
+| All files except `S4_Clean.bin` | 1580 MHz | -4.58 MHz | 58 MHz | 8-bit I/Q | 56 MHz |
+| **`S4_Clean.bin` only** | **1575.42 MHz** | **0 Hz (zero IF)** | **2.5 MHz (2.5e6 samples/s)** | **16-bit I/Q** | **2.5 MHz** |
+
+> **Important:** The special configuration applies only to `S4_Clean.bin`. The spoofed recording `S4_T1.bin` uses the default configuration. Please configure your receiver accordingly before processing each file.
 
 ## Clean IF Recordings
 
